@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props"></Import>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>CorarlERP.Application</AssemblyName>
+    <PackageId>CorarlERP.Application</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>CorarlERP</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="InventoryCalculationJobSchedules\**" />
+    <Compile Remove="Journals\Dto\**" />
+    <EmbeddedResource Remove="InventoryCalculationJobSchedules\**" />
+    <EmbeddedResource Remove="Journals\Dto\**" />
+    <None Remove="InventoryCalculationJobSchedules\**" />
+    <None Remove="Journals\Dto\**" />
+    <Compile Remove="Locks\lockAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Journals\Dto\CreateJournalInput.cs" />
+    <Compile Include="Journals\Dto\CreateOrUpdateJournalItemInput.cs" />
+    <Compile Include="Journals\Dto\GetListJournalInput.cs" />
+    <Compile Include="Journals\Dto\GetStatusOutput.cs" />
+    <Compile Include="Journals\Dto\JournalDetailOutput.cs" />
+    <Compile Include="Journals\Dto\JournalGetListOutput.cs" />
+    <Compile Include="Journals\Dto\JournalItemDetailOutput.cs" />
+    <Compile Include="Journals\Dto\UpdateJournalInput.cs" />
+    <Compile Include="Journals\Dto\UpdateStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3" />
+    <PackageReference Include="EvoHtmlToPdf_NetCore_Client" Version="7.5.0" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.6.20" />
+    <PackageReference Include="NReco.PdfGenerator.LT" Version="1.1.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.0" />
+    <PackageReference Include="PuppeteerSharp" Version="2.0.4" />
+    <PackageReference Include="Telegram.Bot" Version="16.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CorarlERP.Application.Shared\CorarlERP.Application.Shared.csproj" />
+    <ProjectReference Include="..\CorarlERP.Core\CorarlERP.Core.csproj" />
+    <ProjectReference Include="..\CorarlERP.EntityFrameworkCore\CorarlERP.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestPDF\" />
+    <Folder Include="LockTransactions\" />
+    <Folder Include="LockTransactions\Dto\" />
+    <Folder Include="UserActivities\" />
+    <Folder Include="UserActivities\Dto\" />
+    <Folder Include="ItemPriceAppServices\" />
+    <Folder Include="ItemPriceAppServices\Dto\" />
+    <Folder Include="Exchanges\" />
+    <Folder Include="Exchanges\Dto\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Corarl ERP</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Khmer'>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Battambang';
+            src: url('./fonts/Battambang-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif, 'Battambang', 'Khmer OS Battambang' !important;
+            font-size: 12px;
+        }
+
+        .font-18 {
+            font-size: 18px;
+        }
+
+        .font-16 {
+            font-size: 16px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .background-color {
+            background: #44546b;
+            color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+        }
+
+            table.table-border {
+                border-collapse: collapse;
+            }
+
+                table.table-border > thead > tr > th,
+                table.table-border > tbody > tr > td,
+                table.table-border > tfoot > tr > td {
+                    border: 1px solid #000;
+                    height: 23px;
+                }
+
+            table > thead > tr > th,
+            table > thead > tr > td,
+            table > tfoot > tr > td {
+                height: 18px;
+            }
+
+        .td-label-color {
+            color: #4785e5;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table class="table-border" style="font-family: Battambang">
+        <thead>
+            <tr>
+                <td colspan="6">
+                    <div class="font-18 bold text-center">
+                        គីម សាវុធ
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class="font-16 bold text-center">
+                        ទិញ - លក់​ - ​ស្រូវអង្ករគ្រប់មុខ
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <p class="bold text-center">
+                        អាសយដ្ឋាន: ផ្ទះលេខ 21 ផ្លូវជាតិលេខ 1 សង្កាត់និរោធន៍ ខ័ណ្ឌច្បារអំពៅ រាជធានីភ្នំពេញ
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class=" bold text-center">
+                        ទូរសព្ទលេខ: 012 993 132, 011 970 303, 097 799 3132, 088 899 3132, 089 222 032
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class="font-14 bold text-center">
+                        វិក្កយបត្រ(Invoice)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    ឈ្មោះក្រុមហ៊ុន ឬអតិថិជន:
+                </td>
+                <td class="td-label-color">
+                    {{customerName}}
+                </td>
+                <td colspan="2" class="text-right">
+                    កាលបរិច្ឆេទ:
+                </td>
+                <td class="td-label-color">
+                    {{saleOrderDate}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    អាសយដ្ឋាន:
+                </td>
+                <td class="td-label-color">
+                    {{customerAddress}}
+                </td>
+                <td colspan="2" class="text-right">
+                    ប័ណ្ណបញ្ជាលក់លេខ:
+                </td>
+                <td class="td-label-color">
+                    {{saleOrderNo}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    អ្នកទាក់ទង:
+                </td>
+                <td class="td-label-color">
+                    None
+                </td>              
+            </tr>
+            <tr>
+                <td colspan="2">
+                    លេខទូរសព្ទ:
+                </td>
+                <td class="td-label-color">
+                    {{customerTelephone}}
+                </td>               
+            </tr>
+            <tr style="height:10px;">
+                <td colspan="6"></td>
+            </tr>
+            <tr class="background-color">
+                <th width="5%">
+                    ល.រ
+                    <br />
+                    No.
+                </th>
+                <th width="15%">
+                    {{itemHeaderKey}}
+                    <br />
+                    {{itemCodeKey}}
+                </th>
+                <th width="35%">
+                    {{itemHeaderKeyName}}
+                    <br />
+                    {{itemCodeKeyName}}
+                </th>
+                <th width="15%">
+                    ចំនួន
+                    <br />
+                    Quantity
+                </th>
+                <th width="15%">
+                    តំលៃរាយ
+                    <br />
+                    Unit Price
+                </th>
+                <th width="15%">
+                    តំលៃសរុប
+                    <br />
+                    Amounts
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{rowItem}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" rowspan="3" style="border:none;">
+                    កំណត់ទូទាត់ត្រឹមថ្ងៃ(Term of payment):
+                    ................................
+                </td>
+                <td class="bold">សរុប (Total)</td>
+                <td class="bold text-center text-right">
+                    {{subTotal}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">បង់ប្រាក់មុន (Deposit)</td>
+                <td class="bold text-center text-right">
+                    {{deposit}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">នៅខ្វះ (Balance)</td>
+                <td class="bold text-center text-right">
+                    {{balance}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border:none;" class="bold text-center">
+                    អតិថិជន/Customer
+                </td>
+                <td colspan="2" style="border:none;" class="bold text-center">
+                    សាក្សី/Witness
+                </td>
+                <td colspan="2" style="border:none;" class="bold text-center">
+                    តំណាងក្រុមហ៊ុន/Presentive
+                </td>
+            </tr>
+
+        </tfoot>
+    </table>
+   
+</body>
+</html>

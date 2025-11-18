@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <style type="text/css" id="default-style">
+
+        body { font-family: Battambang, 'Khmer OS Battambang'; font-size: 14px; }
+
+        table { border-collapse: collapse; }
+        table th, table td, .p-td { padding: 3px 5px; }
+        table.border th, table.border td { border: 1px solid #333333; }
+        table.border th.border-none, table.border td.border-none { border-color: transparent; }
+        table.border th.border-t-none, table.border td.border-t-none { border-top-color: transparent; }
+        table.border th.border-b-none, table.border td.border-b-none { border-bottom-color: transparent; }
+        table.border th.border-l-none, table.border td.border-l-none { border-left-color: transparent; }
+        table.border th.border-r-none, table.border td.border-r-none { border-right-color: transparent; }
+        thead, tfoot { display: table-row-group; }
+        thead.repeat-header { display: table-header-group; }
+        tr { -webkit-column-break-inside: avoid; break-inside: avoid; page-break-inside: avoid; }
+       
+        .border { border: 1px solid #333333; }
+        .border-r { border-right: 1px solid #333333; }
+        .border-l { border-left: 1px solid #333333; }
+        .border-t { border-top: 1px solid #333333; }
+        .border-b { border-bottom: 1px solid #333333; }
+        .border-x { border-left: 1px solid #333333; border-right: 1px solid #333333; }
+        .border-y { border-top: 1px solid #333333; border-bottom: 1px solid #333333; }
+        .border-dot { border: 1px dotted #333333; }
+        .border-t-dot { border-top: 1px dotted #333333; }
+        .border-b-dot { border-bottom: 1px dotted #333333; }
+        .border-r-dot { border-right: 1px dotted #333333; }
+        .border-l-dot { border-left: 1px dotted #333333; }
+        .border-x-dot { border-left: 1px dotted #333333; border-right: 1px dotted #333333; }
+        .border-y-dot { border-top: 1px dotted #333333; border-bottom: 1px dotted #333333; }
+
+        .font-bold { font-weight: bold; }
+        .font-normal { font-weight: normal; }
+        .font-36 { font-size: 36px; }
+        .font-32 { font-size: 32px; }
+        .font-22 { font-size: 22px; }
+        .font-18 { font-size: 18px; }
+        .font-16 { font-size: 16px; }
+        .font-14 { font-size: 14px; }
+        .font-12 { font-size: 12px; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-left { text-align: left; }
+        .text-top { vertical-align: top; }
+        .text-bottom { vertical-align: bottom; }
+        .text-middle { vertical-align: middle; }
+
+        .m-0 { margin: 0; }
+        .mr-0 { margin-right: 0; }
+        .ml-0 { margin-left: 0; }
+        .mt-0 { margin-top: 0; }
+        .mb-0 { margin-bottom: 0; }
+        .mx-0 { margin-left: 0; margin-right: 0; }
+        .my-0 { margin-top: 0; margin-bottom: 0; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        .m-4 { margin: 1.5rem; }
+        .mr-4 { margin-right: 1.5rem; }
+        .ml-4 { margin-left: 1.5rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mx-4 { margin-left: 1.5rem; margin-right: 1.5rem; }
+        .my-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+        .p-0 { padding: 0; }
+        .pr-0 { padding-right: 0; }
+        .pl-0 { padding-left: 0; }
+        .pt-0 { padding-top: 0; }
+        .pb-0 { padding-bottom: 0; }
+        .px-0 { padding-left: 0; padding-right: 0; }
+        .py-0 { padding-top: 0; padding-bottom: 0; }
+        
+        .bg-gray { background-color: #dcdcdc; }
+        .bg-gray-2 { background-color: #f0f0f0; } 
+        .inline-block { display: inline-block;  }
+        .block { display: block;  }
+        .w-full { width: 100%; }
+
+        .khmer-os-muol-light { font-family: 'Khmer OS Muol Light'; }
+        .khmer-os-battambang { font-family: 'Khmer OS Battambang'; }
+        .battambang { font-family: Battambang; }
+        .moul { font-family: Moul; }
+        .khmer { font-family: Khmer; }
+        .khmer-os { font-family: 'Khmer OS'; }
+
+        .flex { display: flex; }
+        .flex-justify { justify-content: space-between; }
+        #detail-footer-row td { vertical-align: top; }
+                
+    </style>
+</head>
+<body>
+
+    <div class="khmer-os-muol-light font-32 flex flex-justify p-td mb-4">
+        <div class="text-left">បញ្ជាទិញ</div>
+        <div class="text-right">@Logo</div>
+    </div>
+
+    <div class="flex p-td">
+        <div style="width: 90px; flex-shrink: 0;">ឈ្មោះហាង </div>
+        <div style="flex-grow: 1;">: @CompanyName</div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">លេខបញ្ជាទិញ : </div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">@InvoiceNo</div>
+    </div>
+    <div class="flex p-td">
+        <div style="width: 90px; flex-shrink: 0;">អាសយដ្ឋាន </div>
+        <div style="flex-grow: 1;">: @CompanyAddress</div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">ថ្ងៃខែ : </div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">@InvoiceDate</div>
+    </div>
+    <div class="flex p-td">
+        <div style="width: 90px; flex-shrink: 0;">ឈ្មោះអតិថិជន </div>
+        <div style="flex-grow: 1;">: @CustomerName</div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;"> &nbsp; </div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;"> &nbsp; </div>
+    </div>
+    <div class="flex p-td">
+        <div style="width: 90px; flex-shrink: 0;">លេខទូរសព្ទ </div>
+        <div style="flex-grow: 1;">: @CustomerPhone</div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;"> &nbsp; </div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;"> &nbsp; </div>
+    </div>
+    <div class="flex p-td mb-4">
+        <div style="width: 90px; flex-shrink: 0;">អាសយដ្ឋាន </div>
+        <div style="flex-grow: 1;">: @ShippingAddress</div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">រូបិយប័ណ្ណ : </div>
+        <div style="width: 110px; flex-shrink: 0; text-align: right;">@Currency</div>
+    </div>
+
+    <table id='detail-table' width='100%'>
+        <thead id='detail-header' class='repeat-header'>
+            <tr id='detail-header-row' class='bg-gray'>
+                <th id='column1' class='text-left'>ល.រ</th>
+                <th id='column2' class='text-left'>កូដទំនិញ</th>
+                <th id='column3' class='text-left'>ឈ្មោះទំនិញ</th>
+                <th id='column4' class='text-left' style="display:none;">អធិប្បាយ</th>
+                <th id='column5' class='text-right'>ចំនួន</th>
+                <th id='column6' class='text-right'>តំលៃរាយ</th>
+                <th id='column7' class='text-right'>បញ្ចុះតម្លៃ</th>
+                <th id='column8' class='text-right'>តំលៃសរុប</th>
+            </tr>
+        </thead>
+        <tbody id='detail-body'>
+            <tr detail-body-row class='border-b-dot'>
+                <td column1 class='text-left'>@No</td>
+                <td column2 class='text-left'>@ItemCode</td>
+                <td column3 class='text-left'>@ItemName</td>
+                <td column4 class='text-left' style="display:none;">@Description</td>
+                <td column5 class='text-right'>@Qty</td>
+                <td column6 class='text-right'>@UnitPrice</td>
+                <td column7 class='text-right'>@DiscountRate</td>
+                <td column8 class='text-right'>@LineTotal</td>
+            </tr>
+        </tbody>
+        <tfoot id='datail-footer'>
+            <tr id='detail-footer-row'>
+                <td id='footer-column1' colspan='4' class='text-top border-b-none border-l-none'>សម្គាល់: @Memo</td>
+                <td id='footer-column6' class='font-bold text-right p-0'>
+                    <span class='block p-td border-t bg-gray'> សរុប : </span>
+                </td>
+                <td id='footer-column7' colspan='2' class='font-bold text-right p-0'>
+                    <span class='block p-td border-t bg-gray'>@SubTotal</span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br />
+    <br />
+    <br />
+    <div class="flex flex-justify">
+        <div>
+            <div>អ្នកចេញបុង : .......................... : ...../...../.....</div>
+            <div class="text-center"> @UserName</div>
+        </div>
+        <div class="text-center">
+            <div>អតិថិជន : .......................... : ...../...../.....</div>
+        </div>
+    </div>
+    <br />
+</body>
+</html>

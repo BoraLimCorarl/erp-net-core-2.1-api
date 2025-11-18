@@ -1,0 +1,24 @@
+
+{
+    "region" : "ap-southeast-1",
+    "configuration" : "Release",
+    "framework"     : "netcoreapp2.1",
+    "self-contained" : false,
+    "application"    : "CorarlERPWebHost",
+    "environment"    : "CorarlERPWebHost-staging",
+    "enable-xray"    : true,
+    "enhanced-health-type" : "enhanced",
+    "additional-options"   : "",
+    "proxy-server"         : "nginx",
+    "solution-stack"       : "64bit Windows Server Core 2019 v2.10.2 running IIS 10.0",
+    "environment-type"     : "LoadBalanced",
+    "cname"                : "zobookk-staging",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "zobookk-prod-ec2",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "app-path"             : "/",
+    "iis-website"          : "Default Web Site",
+    "loadbalancer-type"    : "application",
+    "health-check-url"     : "/healthz"
+}

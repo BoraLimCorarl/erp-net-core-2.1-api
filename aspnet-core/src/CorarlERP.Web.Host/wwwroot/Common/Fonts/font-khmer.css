@@ -1,0 +1,57 @@
+/* FONT PATH
+ * -------------------------- */
+
+
+@font-face {
+    font-family: 'KhmerOSBattambang-Regular';
+    src: url('KhmerOSBattambang-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Battambang-Regular';
+    src: url('Battambang-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Khmer OS';
+    src: url('KhmerOS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Khmer Sangam MN';
+    src: url('Khmer-Sangam-MN.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Khmer';
+    src: url('Noto-Sans-Khmer.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Khmer OS Muol Light';
+    src: url('Khmer-OS-Muol-Light-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Khmer OS Battambang';
+    src: url('KhmerOSBattambang-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Battambang;
+    src: url('Battambang-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Moul;
+    src: url('Moul-Regular.ttf') format('truetype');
+}

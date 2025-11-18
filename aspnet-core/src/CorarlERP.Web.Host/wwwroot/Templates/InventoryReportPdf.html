@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Corarl ERP</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Khmer'>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Battambang';
+            src: url('./fonts/Battambang-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif, 'Battambang', 'Khmer OS Battambang' !important;
+            font-size: 12px;
+        }
+
+        .font-18 {
+            font-size: 18px;
+        }
+
+        .font-16 {
+            font-size: 16px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .background-color {
+            background: #44546b;
+            color: #ffffff;
+        }
+
+        
+        table.table-border {
+            border-collapse: collapse;
+        }
+
+        table.table-border > thead > tr > th,
+        table.table-border > tbody > tr > td,
+        table.table-border > tfoot > tr > td {
+            border: 1px solid #000;
+            height: 23px;
+            padding-left: 5px;
+            padding-right: 5px;
+            word-wrap:break-word;
+        }
+
+        table > thead > tr > th,
+        table > thead > tr > td,
+        table > tfoot > tr > td {
+            height: 18px;
+        }
+
+        .td-label-color {
+            color: #4785e5;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table class="table-border" style="font-family: 'Roboto', Battambang; width: {{tableWidth}}px; ">
+        <thead>
+            <tr>
+                {{rowHeader}}
+            </tr>
+            {{subHeader}}
+        </thead>
+        <tbody>
+            {{rowItem}}
+        </tbody>
+    </table>
+   
+</body>
+</html>

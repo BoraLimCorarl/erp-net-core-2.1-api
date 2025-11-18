@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Corarl ERP</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Khmer'>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Battambang';
+            src: url('./fonts/Battambang-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif, 'Battambang', 'Khmer OS Battambang' !important;
+            font-size: 10px;           
+            padding: 0px;
+            margin: 0 auto;
+            line-height: 14px;
+        }
+
+        .font-18 { font-size: 18px; line-height: 22px; }
+        .font-16 { font-size: 16px; line-height: 16px; }
+        .font-14 { font-size: 14px; }
+        .font-12 { font-size: 12px; }
+
+        .bold { font-weight: bold; }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+
+        .background-color { background-color: #ddd; }
+        .td-label-color { color: #4785e5; }
+
+        table { width: 100%; border-collapse: collapse; }        
+        table > thead > tr > th,
+        table > thead > tr > td,
+        table > tfoot > tr > td,
+        table > tbody > tr > td { padding: 3px 0; text-align: left; vertical-align: top;}
+        tr.padding > th, tr.padding td { padding: 3px 5px; }
+        tr.charge > td { padding: 8px 5px; }
+
+    </style>
+</head>
+<body>
+    <table style="font-family: Battambang">
+        <thead>
+            <tr>
+                <td colspan="4" class="text-center">
+                    <span class="font-18 bold"> {{CompanyName}}</span>                  
+                    <br />
+                    {{CompanyPhone}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            <tr class="background-color padding">
+                <td colspan="4">
+                    <span class="font-16 bold">{{OrderList}}</span> <br /> {{LocationName}}
+                </td>
+            </tr>
+            <tr>
+                <td width="15%"> Cashier <br /> Date </td>
+                <td > {{UserName}} <br /> {{InvoiceDate}}</td>
+
+                <td class="text-right" width="20%"> Invoice No<br /> Currency</td>
+                <td class="text-right" width="23%"> {{InvoiceNo}}<br /> {{CurrencyCode}} </td>
+            </tr>            
+        </thead>
+    </table>
+
+    <table style="font-family: Battambang" class="padding">
+        <thead>
+            <tr class="background-color font-12 padding">
+                <th width="40%">
+                    Product
+                </th>
+                <th width="14%" class="text-center">
+                    Qty
+                </th>
+                <th width="23%" class="text-right">
+                    Unit Price
+                </th>
+                <th width="23%" class="text-right">
+                    Amount
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{RowItems}}
+        </tbody>
+        <tfoot>
+            <tr class="background-color font-12 padding">
+                <td class="bold" colspan="3">Sub Total</td>
+                <td class="bold text-center text-right">{{SubTotal}}</td>
+            </tr>
+            <tr class="background-color font-12 padding">
+                <td class="bold" colspan="3">Tax</td>
+                <td class="bold text-center text-right">{{Tax}}</td>
+            </tr>
+            <tr class="background-color font-12 padding">
+                <td class="bold" colspan="3">Total</td>
+                <td class="bold text-center text-right">{{Total}}</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="line-height: 3px;">&nbsp;</td>
+            </tr>
+            <tr class="background-color font-16 charge">
+                <td class="bold" colspan="3">Charge</td>
+                <td class="bold text-center text-right"> {{Charge}}</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</body>
+</html>

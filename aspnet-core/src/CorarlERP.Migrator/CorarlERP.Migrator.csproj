@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props"></Import>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>CorarlERP.Migrator</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>CorarlERP.Migrator</PackageId>
+    <UserSecretsId>MyCompanyName-CorarlERP-894FDFC1-6482-4A56-926A-3C46C9FE0329</UserSecretsId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="appsettings.json;log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp.Castle.Log4Net" Version="3.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CorarlERP.EntityFrameworkCore.PostgreSql\CorarlERP.EntityFrameworkCore.PostgreSql.csproj" />
+    <ProjectReference Include="..\CorarlERP.EntityFrameworkCore.SqlServer\CorarlERP.EntityFrameworkCore.SqlServer.csproj" />
+  </ItemGroup>
+</Project>

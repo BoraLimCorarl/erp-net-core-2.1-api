@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <style>
+        body {
+            font-family: Battambang, 'Khmer OS Battambang';
+            font-size: 14px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1> {{companyName}}</h1>
+        <h2> {{headerTitle}}</h2>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>{{No}}</td>
+                <td>{{ItemCode}}</td>
+                <td>{{ItemName}}</td>
+                <td>{{ItemType}}</td>
+                <td>{{PurchaseCost}}</td>
+                <td>{{SalePrice}}</td>               
+                <td>{{Status}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{rowItem}}
+        </tbody>
+    </table>
+
+</body>
+</html>
+

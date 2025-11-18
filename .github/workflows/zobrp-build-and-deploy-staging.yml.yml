@@ -1,0 +1,64 @@
+name: Build and Deploy to ECR (Staging)
+
+on:
+  push:
+    branches:
+      - zobrp-deploy-staging-aws/**  # Trigger only for staging pattern
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '2.1'
+
+jobs:
+  build-and-push:
+    name: Build and Push Docker to ECR
+    runs-on: ubuntu-latest
+    environment: staging-aws
+
+    env:
+      ECR_REGISTRY: ${{ secrets.ECR_ACCOUNT_ID_ZOBRP }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+      ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_ZOBRP }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_ZOBRP }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ZOBRP }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - name: 🧪 Extract version from branch name
+      shell: bash
+      run: |
+        BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+
+        if [[ "$BRANCH_NAME" =~ zobrp-deploy-staging-aws/(v[0-9]+\.[0-9]+)__ ]]; then
+          VERSION="${BASH_REMATCH[1]}"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "✔️ Extracted VERSION: $VERSION"
+        else
+          echo "❌ No version found in branch name: $BRANCH_NAME"
+          exit 1
+        fi
+
+    - name: 🛠️ Build, tag, and push image to ECR
+      run: |
+        IMAGE_URI=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:$VERSION
+    
+        echo "🚀 Building Docker image: $IMAGE_URI"
+        docker build -t $IMAGE_URI -f aspnet-core/Dockerfile aspnet-core
+    
+        echo "📤 Pushing image to ECR: $IMAGE_URI"
+        docker push $IMAGE_URI
